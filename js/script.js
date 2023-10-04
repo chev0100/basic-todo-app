@@ -1,3 +1,67 @@
+// Review of array.forEach vs array.map
+
+// array.forEach
+// forEach((currentElement, indexOfElement, array) => { ... } )
+// forEach will iterate over each element in an array and perform an operation on each element
+// forEach will return undefined
+// forEach is not chainable
+// forEach does not mutate the original array but its callback function can mutate the array
+
+let nums = [1, 2, 3, 4, 5];
+console.log(nums + '\n');
+
+nums.forEach((element, index) => {
+	console.log('element: ' + element, 'index: ' + index);
+	// try to return this first
+	element[index] = element * element;
+});
+
+console.log(nums + '\n');
+
+// array.map
+// map((currentElement, indexOfElement, array) => { ... } )
+// map produces a new array with the results of calling a provided function on every element in the calling array
+// map will return a new array of the results of the callback function
+
+let names = ['Tintin', 'Gromit', 'Shaun', 'Preston', 'Charlotte', 'Wilbur'];
+
+let fullNames = names.map((name, index) => {
+	let titles = [
+		' the first',
+		' the second',
+		' the third',
+		' the fourth',
+		' the fifth',
+		' the sixth',
+	];
+	return name + titles[index];
+});
+
+console.log(fullNames);
+
+// forEach working with DOM elements
+
+const myToDosList = document.querySelector('#to-dos');
+const todoListItems = myToDosList.querySelectorAll('li');
+
+console.log(todoListItems); // what do you see? it returns a NodeList
+
+// we can change properties of each li element using the forEach method
+// we could also do something like add an event listener to each li element ( will do this later )
+// let's change the color of the text of each li element to 'goldenrod'
+
+todoListItems.forEach((todo) => {
+	todo.style.color = 'goldenrod';
+});
+
+// get the text of each li element and store it in an array using the map method
+// try with forEach first; then try with map without using the Array.from method
+// what do you see?
+
+const todoItemsText = Array.from(todoListItems).map((todo) => {
+	return todo.textContent;
+});
+
 // This project index.html file, main.css, and a main.js file. The index.html has a form section holding a ul with the id "to-dos". The css file has some basic styling and a "complete" class. The script file has an array of Todo items.
 
 const myTodos = [
@@ -17,7 +81,7 @@ const myTodos = [
 
 // Load the Todo items into the DOM using the map method with either the createElement and append method or with template literals and the join method. The Todo items will have a checkbox and a label, with the for, name, and id attributes set to the index of the Todo item. The label will have the text of the Todo item.
 
-const myToDosList = document.querySelector('#to-dos');
+// const myToDosList = document.querySelector('#to-dos');
 const uncheckAllButton = document.querySelector('#uncheck-all');
 
 function displayToDos() {
