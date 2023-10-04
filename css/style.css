@@ -112,13 +112,17 @@ select {
 	border-top: 0.0625rem dotted var(--txt-color);
 }
 
-#to-dos label {
+#to-dos > * {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: row-reverse;
 	padding: 2rem 0;
 	border-bottom: 0.0625rem dotted var(--txt-color);
+}
+
+#to-dos li {
+	flex-direction: row;
 }
 
 .complete {
