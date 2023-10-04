@@ -17,7 +17,9 @@ const myTodos = [
 
 // Load the Todo items into the DOM using the map method with either the createElement and append method or with template literals and the join method. The Todo items will have a checkbox and a label, with the for, name, and id attributes set to the index of the Todo item. The label will have the text of the Todo item.
 
-// Use the forEach method to attach an event listener to each Todo item. When the Todo item is clicked, we'll toggle the "complete" css class on the Todo item to indicate whether the Todo item is complete or not. Adding the class will gray out the text and add a strikethrough line.  When the Todo item is checked, the checkbox input will be set to true, otherwise it will be false.
+// Attach an event listener to each myToDosList. Use event.target to determine which Todo item was clicked. When the Todo item is clicked, we'll toggle the "complete" css class on the Todo item to indicate whether the Todo item is complete or not. Adding the class will gray out the text and add a strikethrough line.  When the Todo item is checked, the checkbox input will be set to true, otherwise it will be false.
+
+// Select the Unselect All Button on the page and attach an event listener to it. When the button is clicked, we'll unselect all the Todo items from the DOM using forEach.
 
 // Use the map method to create an array of objects from the Todo items. Each object will have a text property and a completed property. The text property will be the text of the Todo item and the completed property will be true or false depending on whether the Todo item is complete or not.
 
