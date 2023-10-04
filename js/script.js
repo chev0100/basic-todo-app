@@ -36,7 +36,7 @@ function displayToDos() {
 	myToDosList.innerHTML = toDoHTML;
 }
 
-displayToDos();
+// displayToDos();
 
 // Attach an event listener to each myToDosList. Use event.target to determine which Todo item was clicked. When the Todo item is clicked, we'll toggle the "complete" css class on the Todo item to indicate whether the Todo item is complete or not. Adding the class will gray out the text and add a strikethrough line.  When the Todo item is checked, the checkbox input will be set to true, otherwise it will be false.
 
