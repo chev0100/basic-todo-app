@@ -130,7 +130,7 @@ select {
 	text-decoration: line-through;
 }
 
-#uncheck-all {
+button {
 	margin: 2rem auto;
 
 	/* adjust default <a> styling */
